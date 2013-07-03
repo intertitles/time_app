@@ -1,7 +1,14 @@
-<h1>I was born on <%= @birth_date.strftime('%A %B %d %Y')%></h1>
-<p>That's <%= @date_diff[:diff] %> ago. Roughly speaking that's about <%= @days_since_birthdate.to_s(:delimited) %> days spent on this planet (assuming in my former life I was on a different planet). The average human spends a third of their life sleeping... so that's <%= (@days_since_birthdate / 3).to_s(:delimited) %> days that could have been spent doing HackerYou's Summer Academy <%= @days_since_birthdate / 3 / (9*7) %> times.</p>
+<h1>
+I was born on <span class="dynamic-content"><%= @birth_date.strftime('%A %B %d %Y')%></span>
+</h1>
 
-<p><%= get_time_diff(@date_today, @birth_date)%></p>
+<p>
+
+That's <span class="dynamic-content"><%= @date_diff[:diff] %></span> ago. Roughly speaking that's about <span class="dynamic-content"><%= @days_since_birthdate.to_s(:delimited) %></span> days spent on this planet (assuming in my former life I was on a different planet). The average human spends a third of their life sleeping... so that's <span class="dynamic-content"><%= (@days_since_birthdate / 3).to_s(:delimited) %></span> days that could have been spent doing HackerYou's Summer Academy <span class="dynamic-content"><%= @days_since_birthdate / 3 / (9*7) %> times.</span>
+
+</p>
+
+<p class="dynamic-content"><%= get_time_diff(@date_today, @birth_date)%></p>
 
 <p>
 	What is your birthdate?

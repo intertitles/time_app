@@ -10,5 +10,6 @@ class BirthdateController < ApplicationController
   	@date_today = Date.current
   	@birth_date = "#{params[:birth_date][:year]}-#{params[:birth_date][:month]}-#{params[:birth_date][:day]}".to_date
   	@date_diff = Time.diff(@birth_date, @date_today, '%y, %M, %w, and %d')
+  	@days_since_birthdate = (@date_today - @birth_date).to_i
   end
 end
