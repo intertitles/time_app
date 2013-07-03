@@ -7,6 +7,8 @@ class BirthdateController < ApplicationController
   end
 
   def calc
+  	@date_today = Date.current
   	@birth_date = "#{params[:birth_date][:year]}-#{params[:birth_date][:month]}-#{params[:birth_date][:day]}".to_date
+  	@date_diff = Time.diff(@birth_date, @date_today, '%y, %M, %w, and %d')
   end
 end

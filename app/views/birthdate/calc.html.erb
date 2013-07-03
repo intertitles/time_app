@@ -1,5 +1,5 @@
 <h1>You were born on <%= @birth_date.strftime('%A %B %d %Y')%></h1>
 
-<p>That's <%= Time.diff(@birth_date, Date.current, '%y, %M, %w, and %d')[:diff] %> ago</p>
+<p>That's <%= @date_diff[:diff] %> ago</p>
 
 <p><%= get_time_diff(Date.current, @birth_date)%></p>
