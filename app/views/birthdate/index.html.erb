@@ -1,5 +1,5 @@
 <h1>I was born on <%= @birth_date.strftime('%A %B %d %Y')%></h1>
-<p>That's <%= Time.diff(@birth_date, @date_today, '%y, %M, %w, and %d')[:diff] %> ago. Roughly speaking that's about <%= @days_since_birthdate.to_s(:delimited) %> days spent on this planet (assuming in my former life I was on a different planet). The average human spends a third of their life sleeping... so that's <%= (@days_since_birthdate / 3).to_s(:delimited) %> days that could have been spent doing HackerYou's Summer Academy <%= @days_since_birthdate / 3 / (9*7) %> times.</p>
+<p>That's <%= @date_diff[:diff] %> ago. Roughly speaking that's about <%= @days_since_birthdate.to_s(:delimited) %> days spent on this planet (assuming in my former life I was on a different planet). The average human spends a third of their life sleeping... so that's <%= (@days_since_birthdate / 3).to_s(:delimited) %> days that could have been spent doing HackerYou's Summer Academy <%= @days_since_birthdate / 3 / (9*7) %> times.</p>
 
 <p><%= get_time_diff(@date_today, @birth_date)%></p>
 
